@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDEAFF"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HELLO SUJI"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="16dp"
+        android:queryHint="Search tasks..."
+        android:iconifiedByDefault="false"
+        android:background="@drawable/rounded_edittext" />
+
+
+
+    <TextView
+        android:id="@+id/ongoingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ongoing Task"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/searchView"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/ongoingTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ongoingTitle"
+        android:layout_marginTop="8dp"
+        android:text="\n10:30 AM to 01:30 PM"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/todayTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today's Task"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/ongoingTask"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000" />
+
+    <ListView
+        android:id="@+id/taskList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/todayTask"
+        android:layout_marginTop="8dp"
+        android:divider="#CCCCCC"
+        android:dividerHeight="1dp" />
+
+    <Button
+        android:id="@+id/addTaskBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Task"
+        android:layout_below="@id/taskList"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FF6F61"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="20dp" />
+
+</RelativeLayout>
+
+
+
