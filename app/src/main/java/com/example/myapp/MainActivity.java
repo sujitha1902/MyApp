@@ -34,12 +34,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Delete task on long press
         taskList.setOnItemLongClickListener((parent, view, position, id) -> {
+            Task selectedTask = (Task) parent.getItemAtPosition(position);
             new AlertDialog.Builder(MainActivity.this)
                     .setTitle("Delete Task")
                     .setMessage("Are you sure you want to delete this task?")
                     .setPositiveButton("Delete", (dialog, which) -> {
-                        taskArray.remove(position);
-                        taskAdapter.notifyDataSetChanged();
+                        taskArray.remove(selectedTask);
+                        taskAdapter.getFilter().filter(""); // refresh
                         Toast.makeText(MainActivity.this, "Task deleted", Toast.LENGTH_SHORT).show();
                     })
                     .setNegativeButton("Cancel", null)
@@ -69,8 +70,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("Add", (dialog, which) -> {
             String taskText = input.getText().toString().trim();
             if (!taskText.isEmpty()) {
-                taskArray.add(new Task(taskText));
-                taskAdapter.notifyDataSetChanged();
+                taskAdapter.addTask(new Task(taskText));
             }
         });
 

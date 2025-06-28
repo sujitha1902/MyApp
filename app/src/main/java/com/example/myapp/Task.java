@@ -6,7 +6,7 @@ public class Task {
 
     public Task(String text) {
         this.text = text;
-        this.completed = false; // default not completed
+        this.completed = false;
     }
 
     public String getText() { return text; }
